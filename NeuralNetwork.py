@@ -41,25 +41,47 @@ class NeuralNetwork:
             for neuronFromLayer2 in neurons2:
                 neuronId1 = neuronFromLayer1.getId()
                 neuronId2 = neuronFromLayer2.getId()
-                self.setWeightForTwoNeuron(neuronId1, neuronId2, w)
-                self.setWeightForTwoNeuron(neuronId2, neuronId1, w)
+                self.setWeightBetweenTwoNeuron(neuronId1, neuronId2, w)
+                self.setWeightBetweenTwoNeuron(neuronId2, neuronId1, w)
                 w += 0.05
 
     def connectingNeurons(self):
         for i in range(self.numberOfLayers - 1):
-            layer1 = self.neuronLayers[i]
-            layer2 = self.neuronLayers[i + 1]
+            layer1 = self.getLayerByIndex(i)
+            layer2 = self.getLayerByIndex(i + 1)
             self.connectingTwoLayer(layer1, layer2)
 
     # endregion
 
     # region 4. Calculations
+    def calculatingNeuronsBetweenTwoLayer(self, layerIn, layerOut):
+        neuronsIn = layerIn.getNeurons()
+        neuronsOut = layerOut.getNeurons()
+
+        for neuronOut in neuronsOut:
+
+            neuronOutId = neuronOut.getId()
+            for neuronIn in neuronsIn:
+                neuronInId = neuronIn.getId()
+
+
+    def calculatingValuesOfNeurons(self):
+        for i in range(self.numberOfLayers):
+            layerIn = self.getLayerByIndex(i)
+            layerOut = self.getLayerByIndex(i + 1)
+            self.calculatingNeuronsBetweenTwoLayer(layerIn, layerOut)
 
     # endregion
 
     # region 5. Getters and Setters
-    def setWeightForTwoNeuron(self, nId1, nId2, weight):
+    def setWeightBetweenTwoNeuron(self, nId1, nId2, weight):
         self.weights[nId1][nId2] = weight
+
+    def getLayerByIndex(self, index):
+        return self.neuronLayers[index]
+
+    def getWeightBetweenTwoNeuron(self, nId1, nId2):
+        return self.weights[nId1][nId2]
 
     # endregion
 
@@ -73,7 +95,6 @@ class NeuralNetwork:
             print()
 
     # endregion++
-
 
 class NeuronLayer:
 
@@ -145,4 +166,3 @@ def main():
 
 
 main()
-
