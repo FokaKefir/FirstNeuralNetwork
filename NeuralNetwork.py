@@ -1,3 +1,4 @@
+from math import e
 
 class NeuralNetwork:
 
@@ -27,29 +28,29 @@ class NeuralNetwork:
         self.numberOfNeurons = id
 
     def creatingWeights(self):
-        self.weights = [[0 for j in range(self.numberOfNeurons)] for i in range(self.numberOfNeurons)]
+        self.weights = []
 
     # endregion
 
-    # region 3. Connecting neurons
+    # region 3. Adding weights between Neurons
 
-    def connectingTwoLayer(self, layer1, layer2):
+    def addingWeightsBetweenTwoLayer(self, layer1, layer2):
         neurons1 = layer1.getNeurons()
         neurons2 = layer2.getNeurons()
-        w = 0.15
         for neuronFromLayer2 in neurons2:
             for neuronFromLayer1 in neurons1:
                 neuronId1 = neuronFromLayer1.getId()
                 neuronId2 = neuronFromLayer2.getId()
-                self.setWeightBetweenTwoNeuron(neuronId1, neuronId2, w)
-                self.setWeightBetweenTwoNeuron(neuronId2, neuronId1, w)
-                w += 0.05
+                self.setWeightBetweenTwoNeuron(neuronId1, neuronId2, self.w)
+                self.w += 0.05
 
-    def connectingNeurons(self):
+    def addingWeights(self):
+        self.w = 0.15
         for i in range(self.numberOfLayers - 1):
             layer1 = self.getLayerByIndex(i)
             layer2 = self.getLayerByIndex(i + 1)
-            self.connectingTwoLayer(layer1, layer2)
+            self.addingWeightsBetweenTwoLayer(layer1, layer2)
+            self.w += 0.05
 
     # endregion
 
@@ -74,10 +75,11 @@ class NeuralNetwork:
                 weight = self.getWeightBetweenTwoNeuron(neuronInId, neuronOutId)
                 net += neuronInValue * weight
             net += bias
-            print(net)
+            out = 1 / (1 + e ** (-1 * net))
+            neuronOut.setValue(out)
 
     def calculatingValuesOfNeurons(self):
-        for i in range(self.numberOfLayers):
+        for i in range(self.numberOfLayers-1):
             layerIn = self.getLayerByIndex(i)
             layerOut = self.getLayerByIndex(i + 1)
             self.calculatingNeuronsBetweenTwoLayer(layerIn, layerOut)
@@ -86,26 +88,31 @@ class NeuralNetwork:
 
     # region 6. Getters and Setters
     def setWeightBetweenTwoNeuron(self, nId1, nId2, weight):
-        self.weights[nId1][nId2] = weight
+        newElement = {'id1': min(nId1, nId2), 'id2': max(nId1, nId2), 'weight': weight}
+        self.weights.append(newElement)
 
     def getLayerByIndex(self, index):
         return self.neuronLayers[index]
 
     def getWeightBetweenTwoNeuron(self, nId1, nId2):
-        return self.weights[nId1][nId2]
+        id1 = min(nId1, nId2)
+        id2 = max(nId1, nId2)
+        for weight in self.weights:
+            if(weight['id1'] == id1 and weight['id2'] == id2):
+                w = weight['weight']
+                return w
+        return None
 
     # endregion
 
     # region 7. Prints
 
     def printWeights(self):
-        for i in range(self.numberOfNeurons):
-            for j in range(self.numberOfNeurons):
-                val = self.weights[i][j]
-                print(val, end=' ')
-            print()
+        for weight in self.weights:
+            print(weight)
 
-    # endregion++
+
+    # endregion
 
 class NeuronLayer:
 
@@ -185,9 +192,9 @@ def main():
     neuralNetwork = NeuralNetwork(numberOfLayers, layersSize, biases)
     neuralNetwork.creatNeuralNetwork()
     neuralNetwork.creatingWeights()
-    neuralNetwork.connectingNeurons()
+    neuralNetwork.addingWeights()
+    neuralNetwork.printWeights()
     neuralNetwork.addingInput([0.05, 0.1])
     neuralNetwork.calculatingValuesOfNeurons()
-
 
 main()
