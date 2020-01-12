@@ -25,7 +25,8 @@ class NeuralNetwork:
 
             id = newNeuronLayer.getActuallyId()
 
-        self.numberOfNeurons = id
+        del(self.layersSize)
+        del(self.biases)
 
     def creatingWeights(self):
         self.weights = []
@@ -34,6 +35,10 @@ class NeuralNetwork:
 
     # region 3. Adding weights between Neurons
 
+    def addingWeightBetweenTwoNeuron(self, nId1, nId2, weight):
+        newElement = {'id1': min(nId1, nId2), 'id2': max(nId1, nId2), 'weight': weight}
+        self.weights.append(newElement)
+
     def addingWeightsBetweenTwoLayer(self, layer1, layer2):
         neurons1 = layer1.getNeurons()
         neurons2 = layer2.getNeurons()
@@ -41,7 +46,7 @@ class NeuralNetwork:
             for neuronFromLayer1 in neurons1:
                 neuronId1 = neuronFromLayer1.getId()
                 neuronId2 = neuronFromLayer2.getId()
-                self.setWeightBetweenTwoNeuron(neuronId1, neuronId2, self.w)
+                self.addingWeightBetweenTwoNeuron(neuronId1, neuronId2, self.w)
                 self.w += 0.05
 
     def addingWeights(self):
@@ -52,17 +57,30 @@ class NeuralNetwork:
             self.addingWeightsBetweenTwoLayer(layer1, layer2)
             self.w += 0.05
 
+        del(self.w)
+
     # endregion
 
-    # region 4. Adding input
+    # region 4. Adding output neurons name
 
-    def addingInput(self, inputValues):
+    def addingOutputNeuronsName(self, names):
+        layer = self.neuronLayers[self.numberOfLayers - 1]
+        neurons = layer.getNeurons()
+        for i in range(len(neurons)):
+            neurons[i].setName(names[i])
+
+    # endregion
+
+    # region 5. Adding input
+
+    def addingInput(self, inputValues, result):
         self.neuronLayers[0].addingValuesForNeurons(inputValues)
+        self.result = result
 
     # endregion
 
-    # region 5. Calculations
-    def calculatingNeuronsBetweenTwoLayer(self, layerIn, layerOut):
+    # region 6. Calculations
+    def calculatingNeuronsValueBetweenTwoLayer(self, layerIn, layerOut):
         neuronsIn = layerIn.getNeurons()
         neuronsOut = layerOut.getNeurons()
         bias = layerOut.getBias()
@@ -82,15 +100,11 @@ class NeuralNetwork:
         for i in range(self.numberOfLayers-1):
             layerIn = self.getLayerByIndex(i)
             layerOut = self.getLayerByIndex(i + 1)
-            self.calculatingNeuronsBetweenTwoLayer(layerIn, layerOut)
+            self.calculatingNeuronsValueBetweenTwoLayer(layerIn, layerOut)
 
     # endregion
 
-    # region 6. Getters and Setters
-    def setWeightBetweenTwoNeuron(self, nId1, nId2, weight):
-        newElement = {'id1': min(nId1, nId2), 'id2': max(nId1, nId2), 'weight': weight}
-        self.weights.append(newElement)
-
+    # region 7. Getters and Setters
     def getLayerByIndex(self, index):
         return self.neuronLayers[index]
 
@@ -105,7 +119,7 @@ class NeuralNetwork:
 
     # endregion
 
-    # region 7. Prints
+    # region 8. Prints
 
     def printWeights(self):
         for weight in self.weights:
@@ -163,12 +177,18 @@ class NeuronLayer:
 class Neuron:
 
     # region 1. Init Object
-    def __init__(self, id, value = None):
+    def __init__(self, id, value = None, name = None):
         self.id = id
         if(value == None):
             self.value = 0
         else:
             self.value = value
+
+        if(name == None):
+            self.name = ""
+        else:
+            self.name = name
+
 
     # endregion
 
@@ -178,10 +198,14 @@ class Neuron:
         return self.id
     def getValue(self):
         return self.value
+    def getName(self):
+        return self.name
     def setId(self, newId):
         self.id = newId
     def setValue(self, newValue):
         self.value = newValue
+    def setName(self, newName):
+        self.name = newName
 
     # endregion
 
@@ -193,8 +217,8 @@ def main():
     neuralNetwork.creatNeuralNetwork()
     neuralNetwork.creatingWeights()
     neuralNetwork.addingWeights()
-    neuralNetwork.printWeights()
-    neuralNetwork.addingInput([0.05, 0.1])
+    neuralNetwork.addingOutputNeuronsName(["true", "false"])
+    neuralNetwork.addingInput([0.05, 0.1], "true")
     neuralNetwork.calculatingValuesOfNeurons()
 
 main()
