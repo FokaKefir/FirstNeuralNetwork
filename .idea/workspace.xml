@@ -91,7 +91,7 @@
       <workItem from="1578655293668" duration="149000" />
       <workItem from="1578745754009" duration="178000" />
       <workItem from="1578751181598" duration="639000" />
-      <workItem from="1578833971650" duration="1180000" />
+      <workItem from="1578833971650" duration="1964000" />
     </task>
     <task id="LOCAL-00001" summary="Working on calculating neurons value">
       <created>1578510950172</created>
@@ -114,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578564325674</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding names for Neurons and setting at the output layer">
+      <created>1578835210087</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578835210087</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,77 +131,75 @@
     <MESSAGE value="Working on calculating neurons value" />
     <MESSAGE value="net values correct calculating" />
     <MESSAGE value="Changing the database where the weights is stored" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing the database where the weights is stored" />
+    <MESSAGE value="Adding names for Neurons and setting at the output layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding names for Neurons and setting at the output layer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578507035783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578507035783" />
-    <state x="575" y="156" key="CommitChangelistDialog2" timestamp="1578564325140">
+    <state x="641" y="112" key="CommitChangelistDialog2" timestamp="1578835209357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="575" y="156" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578564325140" />
+    <state x="641" y="112" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835209357" />
+    <state x="215" y="133" key="DiffContextDialog" timestamp="1578835178975">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="215" y="133" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835178975" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1578751223358">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578655300420" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578751223358" />
-    <state width="1877" height="301" key="GridCell.Tab.0.bottom" timestamp="1578835127889">
+    <state width="1877" height="301" key="GridCell.Tab.0.bottom" timestamp="1578835841858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835127889" />
-    <state width="1877" height="301" key="GridCell.Tab.0.center" timestamp="1578835127889">
+    <state width="1877" height="301" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835841858" />
+    <state width="1877" height="301" key="GridCell.Tab.0.center" timestamp="1578835841858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835127889" />
-    <state width="1877" height="301" key="GridCell.Tab.0.left" timestamp="1578835127889">
+    <state width="1877" height="301" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835841858" />
+    <state width="1877" height="301" key="GridCell.Tab.0.left" timestamp="1578835841858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835127889" />
-    <state width="1877" height="301" key="GridCell.Tab.0.right" timestamp="1578835127889">
+    <state width="1877" height="301" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835841858" />
+    <state width="1877" height="301" key="GridCell.Tab.0.right" timestamp="1578835841858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835127889" />
-    <state width="1877" height="301" key="GridCell.Tab.1.bottom" timestamp="1578835128450">
+    <state width="1877" height="301" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835841858" />
+    <state width="1877" height="301" key="GridCell.Tab.1.bottom" timestamp="1578835842437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835128450" />
-    <state width="1877" height="301" key="GridCell.Tab.1.center" timestamp="1578835128449">
+    <state width="1877" height="301" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835842437" />
+    <state width="1877" height="301" key="GridCell.Tab.1.center" timestamp="1578835842437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835128449" />
-    <state width="1877" height="301" key="GridCell.Tab.1.left" timestamp="1578835128449">
+    <state width="1877" height="301" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835842437" />
+    <state width="1877" height="301" key="GridCell.Tab.1.left" timestamp="1578835842437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835128449" />
-    <state width="1877" height="301" key="GridCell.Tab.1.right" timestamp="1578835128449">
+    <state width="1877" height="301" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835842437" />
+    <state width="1877" height="301" key="GridCell.Tab.1.right" timestamp="1578835842437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="301" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835128449" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578564333294">
+    <state width="1877" height="301" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835842437" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578835221668">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578564333294" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835221668" />
     <state x="597" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1578751181682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="597" y="385" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578655293918" />
     <state x="597" y="385" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578751181682" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/NeuralNetwork.py</url>
-          <line>217</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="619" y="200" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578835924391">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="619" y="200" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835924391" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Neural_Network_temp$main.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1578515178339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Neural_Network_temp$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1578835127795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Neural_Network_temp$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1578835841776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

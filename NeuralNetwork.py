@@ -102,6 +102,22 @@ class NeuralNetwork:
             layerOut = self.getLayerByIndex(i + 1)
             self.calculatingNeuronsValueBetweenTwoLayer(layerIn, layerOut)
 
+    def calulatingError(self):
+        outputNeurons = self.neuronLayers[self.numberOfLayers - 1].getNeurons()
+        totalError = 0
+        for neuron in outputNeurons:
+            neuronName = neuron.getName()
+            neuronValue = neuron.getValue()
+            if(neuronName == self.result):
+                target = 0.99
+            else:
+                target = 0.01
+
+            actualError = ((target - neuronValue) ** 2) / 2
+            totalError += actualError
+        self.totalError = totalError
+
+
     # endregion
 
     # region 7. Getters and Setters
@@ -217,8 +233,9 @@ def main():
     neuralNetwork.creatNeuralNetwork()
     neuralNetwork.creatingWeights()
     neuralNetwork.addingWeights()
-    neuralNetwork.addingOutputNeuronsName(["true", "false"])
+    neuralNetwork.addingOutputNeuronsName(["false", "true"])
     neuralNetwork.addingInput([0.05, 0.1], "true")
     neuralNetwork.calculatingValuesOfNeurons()
+    neuralNetwork.calulatingError()
 
 main()
