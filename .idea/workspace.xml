@@ -91,7 +91,7 @@
       <workItem from="1578655293668" duration="149000" />
       <workItem from="1578745754009" duration="178000" />
       <workItem from="1578751181598" duration="639000" />
-      <workItem from="1578833971650" duration="1964000" />
+      <workItem from="1578833971650" duration="3397000" />
     </task>
     <task id="LOCAL-00001" summary="Working on calculating neurons value">
       <created>1578510950172</created>
@@ -121,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578835210087</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adding the Error calculator method to the NeuralNetwork object">
+      <created>1578835970423</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578835970423</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,21 +139,22 @@
     <MESSAGE value="net values correct calculating" />
     <MESSAGE value="Changing the database where the weights is stored" />
     <MESSAGE value="Adding names for Neurons and setting at the output layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding names for Neurons and setting at the output layer" />
+    <MESSAGE value="Adding the Error calculator method to the NeuralNetwork object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the Error calculator method to the NeuralNetwork object" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578507035783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578507035783" />
-    <state x="641" y="112" key="CommitChangelistDialog2" timestamp="1578835209357">
+    <state x="641" y="112" key="CommitChangelistDialog2" timestamp="1578837742140">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="641" y="112" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835209357" />
-    <state x="215" y="133" key="DiffContextDialog" timestamp="1578835178975">
+    <state x="641" y="112" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578837742140" />
+    <state x="215" y="133" key="DiffContextDialog" timestamp="1578837740884">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="215" y="133" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835178975" />
+    <state x="215" y="133" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578837740884" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1578751223358">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -184,10 +192,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="301" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835842437" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578835221668">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578835975459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835221668" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835975459" />
     <state x="597" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1578751181682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

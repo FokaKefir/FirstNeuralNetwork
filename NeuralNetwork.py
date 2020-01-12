@@ -97,7 +97,7 @@ class NeuralNetwork:
             neuronOut.setValue(out)
 
     def calculatingValuesOfNeurons(self):
-        for i in range(self.numberOfLayers-1):
+        for i in range(self.numberOfLayers - 1):
             layerIn = self.getLayerByIndex(i)
             layerOut = self.getLayerByIndex(i + 1)
             self.calculatingNeuronsValueBetweenTwoLayer(layerIn, layerOut)
@@ -108,7 +108,7 @@ class NeuralNetwork:
         for neuron in outputNeurons:
             neuronName = neuron.getName()
             neuronValue = neuron.getValue()
-            if(neuronName == self.result):
+            if (neuronName == self.result):
                 target = 0.99
             else:
                 target = 0.01
@@ -116,7 +116,6 @@ class NeuralNetwork:
             actualError = ((target - neuronValue) ** 2) / 2
             totalError += actualError
         self.totalError = totalError
-
 
     # endregion
 
@@ -128,7 +127,7 @@ class NeuralNetwork:
         id1 = min(nId1, nId2)
         id2 = max(nId1, nId2)
         for weight in self.weights:
-            if(weight['id1'] == id1 and weight['id2'] == id2):
+            if (weight['id1'] == id1 and weight['id2'] == id2):
                 w = weight['weight']
                 return w
         return None
@@ -140,7 +139,6 @@ class NeuralNetwork:
     def printWeights(self):
         for weight in self.weights:
             print(weight)
-
 
     # endregion
 
@@ -193,18 +191,10 @@ class NeuronLayer:
 class Neuron:
 
     # region 1. Init Object
-    def __init__(self, id, value = None, name = None):
+    def __init__(self, id, value=0, name=""):
         self.id = id
-        if(value == None):
-            self.value = 0
-        else:
-            self.value = value
-
-        if(name == None):
-            self.name = ""
-        else:
-            self.name = name
-
+        self.value = value
+        self.name = name
 
     # endregion
 
@@ -212,14 +202,19 @@ class Neuron:
 
     def getId(self):
         return self.id
+
     def getValue(self):
         return self.value
+
     def getName(self):
         return self.name
+
     def setId(self, newId):
         self.id = newId
+
     def setValue(self, newValue):
         self.value = newValue
+
     def setName(self, newName):
         self.name = newName
 
@@ -237,5 +232,6 @@ def main():
     neuralNetwork.addingInput([0.05, 0.1], "true")
     neuralNetwork.calculatingValuesOfNeurons()
     neuralNetwork.calulatingError()
+
 
 main()
