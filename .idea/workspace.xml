@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d94e7cbf-d003-481c-9292-64e9b966c192" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Neural_Network_temp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Neural_Network_temp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetwork.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +94,7 @@
       <workItem from="1578833971650" duration="3397000" />
       <workItem from="1578928988886" duration="167000" />
       <workItem from="1578938422513" duration="1930000" />
-      <workItem from="1578982265048" duration="8109000" />
+      <workItem from="1578982265048" duration="8430000" />
     </task>
     <task id="LOCAL-00001" summary="Working on calculating neurons value">
       <created>1578510950172</created>
@@ -134,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578835970423</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Resolving the back ward.">
+      <created>1579001198274</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579001198274</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +163,8 @@
     <MESSAGE value="Changing the database where the weights is stored" />
     <MESSAGE value="Adding names for Neurons and setting at the output layer" />
     <MESSAGE value="Adding the Error calculator method to the NeuralNetwork object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding the Error calculator method to the NeuralNetwork object" />
+    <MESSAGE value="Resolving the back ward." />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolving the back ward." />
   </component>
   <component name="WindowStateProjectService">
     <state x="331" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578929133473">
@@ -167,10 +172,10 @@
     </state>
     <state x="331" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1578929133473" />
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578507035783" />
-    <state x="513" y="16" key="CommitChangelistDialog2" timestamp="1579001163937">
+    <state x="513" y="16" key="CommitChangelistDialog2" timestamp="1579001196995">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="513" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579001163937" />
+    <state x="513" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579001196995" />
     <state x="641" y="112" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578837742140" />
     <state x="215" y="133" key="DiffContextDialog" timestamp="1578837740884">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -226,9 +231,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1578938539525" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578835975459">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1579001210850">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579001210850" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835975459" />
     <state x="478" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1578982277662">
       <screen x="0" y="0" width="1536" height="824" />
