@@ -1,4 +1,5 @@
 from math import e
+import time
 
 learningRate = 0.5
 class NeuralNetwork:
@@ -105,7 +106,24 @@ class NeuralNetwork:
 
     # endregion
 
-    # region 7. Backward
+    # region 7. Calculating error
+    def calculatingError(self):
+        neurons = self.neuronLayers[self.numberOfLayers-1].getNeurons()
+        totalError = 0
+        for neuron in neurons:
+            name = neuron.getName()
+            if(name == self.result):
+                target = 0.99
+            else:
+                target = 0.01
+            error = ((target - neuron.getValue()) ** 2)/2
+            totalError += error
+        self.totalError = totalError
+
+
+    # endregion
+
+    # region 8. Backward
 
     def calculatingDerErrorPerOut(self, neuronIn, neuronOut, condition, index):
         nOutValue = neuronOut.getValue()
@@ -150,7 +168,6 @@ class NeuralNetwork:
 
                 self.setWeightBetweenTwoNeuron(nInId, nOutId, newWeight)
 
-
     def backPropagation(self):
         for i in range(self.numberOfLayers-1, 0, -1):
             layerOut = self.neuronLayers[i]
@@ -160,10 +177,9 @@ class NeuralNetwork:
                 condition = True
             self.backPropagationBeetwenTwoLayer(layerOut, layerIn, condition, i)
 
-
     # endregion
 
-    # region 8. Getters and Setters
+    # region 9. Getters and Setters
     def getLayerByIndex(self, index):
         return self.neuronLayers[index]
 
@@ -202,12 +218,20 @@ class NeuralNetwork:
 
     # endregion
 
-    # region 9. Prints
+    # region 10. Prints
 
     def printWeights(self):
         for weight in self.weights:
             print(weight)
 
+    def printError(self):
+        print(self.totalError)
+
+    def printNameAndValue(self):
+        neurons = self.neuronLayers[self.numberOfLayers-1].getNeurons()
+        for neuron in neurons:
+            print(neuron.getName(), neuron.getValue())
+        print()
     # endregion
 
 class NeuronLayer:
@@ -263,7 +287,6 @@ class Neuron:
         self.id = id
         self.value = value
         self.name = name
-        self.derErrorPerOut = None
 
     # endregion
 
@@ -278,9 +301,6 @@ class Neuron:
     def getName(self):
         return self.name
 
-    def getDerErrorPerOut(self):
-        return self.derErrorPerOut
-
     def setId(self, newId):
         self.id = newId
 
@@ -290,9 +310,15 @@ class Neuron:
     def setName(self, newName):
         self.name = newName
 
-    def setDerErrorPerOut(self, newDerErrorPerOut):
-        self.derErrorPerOut = newDerErrorPerOut
     # endregion
+
+def training(neuralNetwork):
+    while(True):
+        neuralNetwork.calculatingValuesOfNeurons()
+        neuralNetwork.calculatingError()
+        neuralNetwork.printNameAndValue()
+        neuralNetwork.backPropagation()
+        time.sleep(0.5)
 
 def main():
     numberOfLayers = 3
@@ -303,9 +329,8 @@ def main():
     neuralNetwork.creatingWeights()
     neuralNetwork.addingWeights()
     neuralNetwork.addingOutputNeuronsName(["false", "true"])
-    neuralNetwork.addingInput([0.05, 0.1], "true")      
-    neuralNetwork.calculatingValuesOfNeurons()
-    neuralNetwork.backPropagation()
+    neuralNetwork.addingInput([0.05, 0.1], "true")
+    training(neuralNetwork)
 
 
 main()
