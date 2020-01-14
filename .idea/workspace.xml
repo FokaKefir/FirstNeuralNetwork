@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d94e7cbf-d003-481c-9292-64e9b966c192" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Neural_Network_temp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Neural_Network_temp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetwork.py" afterDir="false" />
     </list>
@@ -31,13 +33,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/NeuralNetwork.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager">
     <configuration name="NeuralNetwork" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -47,9 +50,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="G:\Matek-Info Intenziv Infomatika\PyCharm Projects\Neural_Network_temp\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -92,6 +95,9 @@
       <workItem from="1578745754009" duration="178000" />
       <workItem from="1578751181598" duration="639000" />
       <workItem from="1578833971650" duration="3397000" />
+      <workItem from="1578928988886" duration="167000" />
+      <workItem from="1578938422513" duration="1930000" />
+      <workItem from="1578982265048" duration="8109000" />
     </task>
     <task id="LOCAL-00001" summary="Working on calculating neurons value">
       <created>1578510950172</created>
@@ -134,6 +140,19 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working on calculating neurons value" />
     <MESSAGE value="net values correct calculating" />
@@ -143,71 +162,112 @@
     <option name="LAST_COMMIT_MESSAGE" value="Adding the Error calculator method to the NeuralNetwork object" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578507035783">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="331" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578929133473">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="331" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1578929133473" />
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578507035783" />
-    <state x="641" y="112" key="CommitChangelistDialog2" timestamp="1578837742140">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="513" y="16" key="CommitChangelistDialog2" timestamp="1579001163937">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="513" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579001163937" />
     <state x="641" y="112" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578837742140" />
     <state x="215" y="133" key="DiffContextDialog" timestamp="1578837740884">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="215" y="133" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578837740884" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1578751223358">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="592" y="217" key="FileChooserDialogImpl" timestamp="1578929122082">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="592" y="217" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578929122082" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578655300420" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578751223358" />
-    <state width="1877" height="301" key="GridCell.Tab.0.bottom" timestamp="1578835841858">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom" timestamp="1578998982776">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578998982776" />
     <state width="1877" height="301" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835841858" />
-    <state width="1877" height="301" key="GridCell.Tab.0.center" timestamp="1578835841858">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="212" key="GridCell.Tab.0.center" timestamp="1578998982776">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="212" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578998982776" />
     <state width="1877" height="301" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835841858" />
-    <state width="1877" height="301" key="GridCell.Tab.0.left" timestamp="1578835841858">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="212" key="GridCell.Tab.0.left" timestamp="1578998982772">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="212" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578998982772" />
     <state width="1877" height="301" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835841858" />
-    <state width="1877" height="301" key="GridCell.Tab.0.right" timestamp="1578835841858">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="212" key="GridCell.Tab.0.right" timestamp="1578998982776">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="212" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578998982776" />
     <state width="1877" height="301" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835841858" />
-    <state width="1877" height="301" key="GridCell.Tab.1.bottom" timestamp="1578835842437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="212" key="GridCell.Tab.1.bottom" timestamp="1578998984122">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="212" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578998984122" />
     <state width="1877" height="301" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835842437" />
-    <state width="1877" height="301" key="GridCell.Tab.1.center" timestamp="1578835842437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="212" key="GridCell.Tab.1.center" timestamp="1578998984122">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="212" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1578998984122" />
     <state width="1877" height="301" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835842437" />
-    <state width="1877" height="301" key="GridCell.Tab.1.left" timestamp="1578835842437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="212" key="GridCell.Tab.1.left" timestamp="1578998984122">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="212" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1578998984122" />
     <state width="1877" height="301" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835842437" />
-    <state width="1877" height="301" key="GridCell.Tab.1.right" timestamp="1578835842437">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="212" key="GridCell.Tab.1.right" timestamp="1578998984122">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="212" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1578998984122" />
     <state width="1877" height="301" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835842437" />
+    <state x="277" y="56" key="SettingsEditor" timestamp="1578938539525">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1578938539525" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578835975459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835975459" />
-    <state x="597" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1578751181682">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="478" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1578982277662">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="478" y="305" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1578982277662" />
     <state x="597" y="385" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578655293918" />
     <state x="597" y="385" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578751181682" />
-    <state x="619" y="200" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578835924391">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="495" y="57" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578998454664">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="495" y="57" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1578998454664" />
     <state x="619" y="200" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578835924391" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NeuralNetwork.py</url>
+          <line>154</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="derErrorPerOut * derOutPerNet * self.getWeightBetweenTwoNeuron(nInId, nOutId)" language="Python" />
+        <watch expression="self" language="Python" />
+        <watch expression="neuronIndex.getDerErrorPerOut()" language="Python" />
+        <watch expression="neuronsIndex" />
+        <watch expression="neuronsIndex" />
+        <watch expression="self.neuronLayers" />
+        <watch expression="self.neuronLayers" />
+        <watch expression="layerOut" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Neural_Network_temp$main.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1578515178339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Neural_Network_temp$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1578835841776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FirstNeuralNetwork$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1578998982574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
