@@ -7,9 +7,9 @@ class NeuralNetwork:
     # region 1. Init Object
 
     def __init__(self, numberOfLayers, layersSize, biases):
-        self.numberOfLayers = numberOfLayers
-        self.layersSize = layersSize
-        self.biases = biases
+        self.__numberOfLayers = numberOfLayers
+        self.__layersSize = layersSize
+        self.__biases = biases
 
     # endregion
 
@@ -17,21 +17,21 @@ class NeuralNetwork:
 
     def creatNeuralNetwork(self):
         id = 0
-        self.neuronLayers = []
-        for index in range(self.numberOfLayers):
-            layerSize = self.layersSize[index]
-            bias = self.biases[index]
+        self.__neuronLayers = []
+        for index in range(self.__numberOfLayers):
+            layerSize = self.__layersSize[index]
+            bias = self.__biases[index]
             newNeuronLayer = NeuronLayer(layerSize, bias, id)
             newNeuronLayer.creatLayer()
-            self.neuronLayers.append(newNeuronLayer)
+            self.__neuronLayers.append(newNeuronLayer)
 
             id = newNeuronLayer.getActuallyId()
 
-        del(self.layersSize)
-        del(self.biases)
+        del(self.__layersSize)
+        del(self.__biases)
 
     def creatingWeights(self):
-        self.weights = []
+        self.__weights = []
 
     # endregion
 
@@ -39,7 +39,7 @@ class NeuralNetwork:
 
     def addingWeightBetweenTwoNeuron(self, nId1, nId2, weight):
         newElement = {'id1': min(nId1, nId2), 'id2': max(nId1, nId2), 'weight': weight}
-        self.weights.append(newElement)
+        self.__weights.append(newElement)
 
     def addingWeightsBetweenTwoLayer(self, layer1, layer2):
         neurons1 = layer1.getNeurons()
@@ -48,25 +48,25 @@ class NeuralNetwork:
             for neuronFromLayer1 in neurons1:
                 neuronId1 = neuronFromLayer1.getId()
                 neuronId2 = neuronFromLayer2.getId()
-                self.addingWeightBetweenTwoNeuron(neuronId1, neuronId2, self.w)
-                self.w += 0.05
+                self.addingWeightBetweenTwoNeuron(neuronId1, neuronId2, self.__w)
+                self.__w += 0.05
 
     def addingWeights(self):
-        self.w = 0.15
-        for i in range(self.numberOfLayers - 1):
+        self.__w = 0.15
+        for i in range(self.__numberOfLayers - 1):
             layer1 = self.getLayerByIndex(i)
             layer2 = self.getLayerByIndex(i + 1)
             self.addingWeightsBetweenTwoLayer(layer1, layer2)
-            self.w += 0.05
+            self.__w += 0.05
 
-        del(self.w)
+        del(self.__w)
 
     # endregion
 
     # region 4. Adding output neurons name
 
     def addingOutputNeuronsName(self, names):
-        layer = self.neuronLayers[self.numberOfLayers - 1]
+        layer = self.getLayerByIndex(self.__numberOfLayers - 1)
         neurons = layer.getNeurons()
         for i in range(len(neurons)):
             neurons[i].setName(names[i])
@@ -76,8 +76,8 @@ class NeuralNetwork:
     # region 5. Adding input
 
     def addingInput(self, inputValues, result):
-        self.neuronLayers[0].addingValuesForNeurons(inputValues)
-        self.result = result
+        self.getLayerByIndex(0).addingValuesForNeurons(inputValues)
+        self.__result = result
 
     # endregion
 
@@ -99,7 +99,7 @@ class NeuralNetwork:
             neuronOut.setValue(out)
 
     def calculatingValuesOfNeurons(self):
-        for i in range(self.numberOfLayers - 1):
+        for i in range(self.__numberOfLayers - 1):
             layerIn = self.getLayerByIndex(i)
             layerOut = self.getLayerByIndex(i + 1)
             self.calculatingNeuronsValueBetweenTwoLayer(layerIn, layerOut)
@@ -108,17 +108,17 @@ class NeuralNetwork:
 
     # region 7. Calculating error
     def calculatingError(self):
-        neurons = self.neuronLayers[self.numberOfLayers-1].getNeurons()
+        neurons = self.getLayerByIndex(self.__numberOfLayers-1).getNeurons()
         totalError = 0
         for neuron in neurons:
             name = neuron.getName()
-            if(name == self.result):
+            if(name == self.__result):
                 target = 0.99
             else:
                 target = 0.01
             error = ((target - neuron.getValue()) ** 2)/2
             totalError += error
-        self.totalError = totalError
+        self.__totalError = totalError
 
 
     # endregion
@@ -129,7 +129,7 @@ class NeuralNetwork:
         nOutValue = neuronOut.getValue()
 
         if (condition):
-            if (neuronOut.getName() == self.result):
+            if (neuronOut.getName() == self.__result):
                 target = 0.99
             else:
                 target = 0.01
@@ -162,16 +162,17 @@ class NeuralNetwork:
 
                 newWeight = self.getWeightBetweenTwoNeuron(nInId, nOutId) - learningRate * derErrorPerWeight
 
-                neuronIn.setDerErrorPerOut(neuronIn.getDerErrorPerOut() + derErrorPerOut * derOutPerNet * self.getWeightBetweenTwoNeuron(nInId, nOutId))
+                neuronIn.setDerErrorPerOut(
+                    neuronIn.getDerErrorPerOut() + derErrorPerOut * derOutPerNet * self.getWeightBetweenTwoNeuron(nInId, nOutId))
 
                 self.setWeightBetweenTwoNeuron(nInId, nOutId, newWeight)
 
     def backPropagation(self):
-        for i in range(self.numberOfLayers-1, 0, -1):
-            layerOut = self.neuronLayers[i]
-            layerIn = self.neuronLayers[i-1]
+        for i in range(self.__numberOfLayers-1, 0, -1):
+            layerOut = self.__neuronLayers[i]
+            layerIn = self.__neuronLayers[i-1]
             condition = False
-            if(i == self.numberOfLayers-1):
+            if(i == self.__numberOfLayers-1):
                 condition = True
             self.backPropagationBeetwenTwoLayer(layerOut, layerIn, condition)
 
@@ -179,12 +180,12 @@ class NeuralNetwork:
 
     # region 9. Getters and Setters
     def getLayerByIndex(self, index):
-        return self.neuronLayers[index]
+        return self.__neuronLayers[index]
 
     def getWeightBetweenTwoNeuron(self, nId1, nId2):
         id1 = min(nId1, nId2)
         id2 = max(nId1, nId2)
-        for weight in self.weights:
+        for weight in self.__weights:
             if (weight['id1'] == id1 and weight['id2'] == id2):
                 w = weight['weight']
                 return w
@@ -193,7 +194,7 @@ class NeuralNetwork:
     def setWeightBetweenTwoNeuron(self, nId1, nId2, newWeight):
         id1 = min(nId1, nId2)
         id2 = max(nId1, nId2)
-        for weight in self.weights:
+        for weight in self.__weights:
             if (weight['id1'] == id1 and weight['id2'] == id2):
                 weight['weight'] = newWeight
                 return
@@ -204,14 +205,14 @@ class NeuralNetwork:
     # region 10. Prints
 
     def printWeights(self):
-        for weight in self.weights:
+        for weight in self.__weights:
             print(weight)
 
     def printError(self):
-        print(self.totalError)
+        print(self.__totalError)
 
     def printNameAndValue(self):
-        neurons = self.neuronLayers[self.numberOfLayers-1].getNeurons()
+        neurons = self.getLayerByIndex(self.__numberOfLayers-1).getNeurons()
         for neuron in neurons:
             print(neuron.getName(), neuron.getValue())
         print()
@@ -221,49 +222,49 @@ class NeuronLayer:
 
     # region 1. Init Object
     def __init__(self, numberOfNeurons, bias, actuallyId):
-        self.numberOfNeurons = numberOfNeurons
-        self.actuallyId = actuallyId
-        self.bias = bias
+        self.__numberOfNeurons = numberOfNeurons
+        self.__actuallyId = actuallyId
+        self.__bias = bias
 
     # endregion
 
     # region 2. Creat Layers
 
     def creatLayer(self):
-        self.neurons = []
-        for i in range(self.numberOfNeurons):
-            newNeuron = Neuron(self.actuallyId)
-            self.neurons.append(newNeuron)
-            self.actuallyId += 1
+        self.__neurons = []
+        for i in range(self.__numberOfNeurons):
+            newNeuron = Neuron(self.__actuallyId)
+            self.__neurons.append(newNeuron)
+            self.__actuallyId += 1
 
     # endregion
 
     # region 3. Adding values for Neurons
 
     def addingValuesForNeurons(self, values):
-        for i in range(self.numberOfNeurons):
+        for i in range(self.__numberOfNeurons):
             val = values[i]
-            self.neurons[i].setValue(val)
+            self.__neurons[i].setValue(val)
 
     # endregion
 
     # region 4. Getters and Setters
 
     def getActuallyId(self):
-        return self.actuallyId
+        return self.__actuallyId
 
     def getNeurons(self):
-        return self.neurons
+        return self.__neurons
 
     def getBias(self):
-        return self.bias
+        return self.__bias
 
     def setActuallyId(self, newId):
-        self.actuallyId = newId
+        self.__actuallyId = newId
 
-    def setNeuronsDerErrorPerOut(self, value):
-        for neuron in self.neurons:
-            neuron.setDerErrorPerOut(value)
+    def setNeuronsDerErrorPerOut(self, newValue):
+        for neuron in self.__neurons:
+            neuron.setDerErrorPerOut(newValue)
 
     # endregion
 
@@ -271,38 +272,38 @@ class Neuron:
 
     # region 1. Init Object
     def __init__(self, id, value=0, name=""):
-        self.id = id
-        self.value = value
-        self.name = name
-        self.derErrorPerOut = 0
+        self.__id = id
+        self.__value = value
+        self.__name = name
+        self.__derErrorPerOut = 0
 
     # endregion
 
     # region 2. Getters and Setters
 
     def getId(self):
-        return self.id
+        return self.__id
 
     def getValue(self):
-        return self.value
+        return self.__value
 
     def getName(self):
-        return self.name
+        return self.__name
 
     def getDerErrorPerOut(self):
-        return self.derErrorPerOut
+        return self.__derErrorPerOut
 
     def setId(self, newId):
-        self.id = newId
+        self.__id = newId
 
     def setValue(self, newValue):
-        self.value = newValue
+        self.__value = newValue
 
     def setName(self, newName):
-        self.name = newName
+        self.__name = newName
 
     def setDerErrorPerOut(self, newDerErrorPerOut):
-        self.derErrorPerOut = newDerErrorPerOut
+        self.__derErrorPerOut = newDerErrorPerOut
 
     # endregion
 
