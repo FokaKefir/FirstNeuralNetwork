@@ -1,5 +1,5 @@
 from math import e
-import time
+from gui.neuralnetwrok import NeuronLayer
 
 learningRate = 0.5
 class NeuralNetwork:
@@ -21,7 +21,7 @@ class NeuralNetwork:
         for index in range(self.__numberOfLayers):
             layerSize = self.__layersSize[index]
             bias = self.__biases[index]
-            newNeuronLayer = NeuronLayer(layerSize, bias, id)
+            newNeuronLayer = NeuronLayer.NeuronLayer(layerSize, bias, id)
             newNeuronLayer.creatLayer()
             self.__neuronLayers.append(newNeuronLayer)
 
@@ -217,115 +217,3 @@ class NeuralNetwork:
             print(neuron.getName(), neuron.getValue())
         print()
     # endregion
-
-class NeuronLayer:
-
-    # region 1. Init Object
-    def __init__(self, numberOfNeurons, bias, actuallyId):
-        self.__numberOfNeurons = numberOfNeurons
-        self.__actuallyId = actuallyId
-        self.__bias = bias
-
-    # endregion
-
-    # region 2. Creat Layers
-
-    def creatLayer(self):
-        self.__neurons = []
-        for i in range(self.__numberOfNeurons):
-            newNeuron = Neuron(self.__actuallyId)
-            self.__neurons.append(newNeuron)
-            self.__actuallyId += 1
-
-    # endregion
-
-    # region 3. Adding values for Neurons
-
-    def addingValuesForNeurons(self, values):
-        for i in range(self.__numberOfNeurons):
-            val = values[i]
-            self.__neurons[i].setValue(val)
-
-    # endregion
-
-    # region 4. Getters and Setters
-
-    def getActuallyId(self):
-        return self.__actuallyId
-
-    def getNeurons(self):
-        return self.__neurons
-
-    def getBias(self):
-        return self.__bias
-
-    def setActuallyId(self, newId):
-        self.__actuallyId = newId
-
-    def setNeuronsDerErrorPerOut(self, newValue):
-        for neuron in self.__neurons:
-            neuron.setDerErrorPerOut(newValue)
-
-    # endregion
-
-class Neuron:
-
-    # region 1. Init Object
-    def __init__(self, id, value=0, name=""):
-        self.__id = id
-        self.__value = value
-        self.__name = name
-        self.__derErrorPerOut = 0
-
-    # endregion
-
-    # region 2. Getters and Setters
-
-    def getId(self):
-        return self.__id
-
-    def getValue(self):
-        return self.__value
-
-    def getName(self):
-        return self.__name
-
-    def getDerErrorPerOut(self):
-        return self.__derErrorPerOut
-
-    def setId(self, newId):
-        self.__id = newId
-
-    def setValue(self, newValue):
-        self.__value = newValue
-
-    def setName(self, newName):
-        self.__name = newName
-
-    def setDerErrorPerOut(self, newDerErrorPerOut):
-        self.__derErrorPerOut = newDerErrorPerOut
-
-    # endregion
-
-def training(neuralNetwork):
-    while(True):
-        neuralNetwork.calculatingValuesOfNeurons()
-        neuralNetwork.calculatingError()
-        neuralNetwork.printNameAndValue()
-        neuralNetwork.backPropagation()
-        time.sleep(0.1)
-
-def main():
-    numberOfLayers = 3
-    layersSize = [2, 2, 2]
-    biases = [0, 0.35, 0.60]
-    neuralNetwork = NeuralNetwork(numberOfLayers, layersSize, biases)
-    neuralNetwork.creatNeuralNetwork()
-    neuralNetwork.creatingWeights()
-    neuralNetwork.addingWeights()
-    neuralNetwork.addingOutputNeuronsName(["false", "true"])
-    neuralNetwork.addingInput([0.05, 0.1], "true")
-    training(neuralNetwork)
-
-
-main()
