@@ -4,6 +4,7 @@ from gui.neuralnetwrok import NeuralNetwork
 
 def training(neuralNetwork):
     while(True):
+        neuralNetwork.addingInput([0.05, 0.1], "true")
         neuralNetwork.calculatingValuesOfNeurons()
         neuralNetwork.calculatingError()
         neuralNetwork.printNameAndValue()
@@ -17,9 +18,7 @@ def main():
     neuralNetwork = NeuralNetwork.NeuralNetwork(numberOfLayers, layersSize, biases)
     neuralNetwork.creatNeuralNetwork()
     neuralNetwork.creatingWeights()
-    neuralNetwork.addingWeights()
     neuralNetwork.addingOutputNeuronsName(["false", "true"])
-    neuralNetwork.addingInput([0.05, 0.1], "true")
     training(neuralNetwork)
 
 

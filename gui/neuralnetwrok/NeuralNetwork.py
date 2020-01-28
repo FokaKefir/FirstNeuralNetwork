@@ -1,4 +1,5 @@
 from math import e
+import random
 from gui.neuralnetwrok import NeuronLayer
 
 learningRate = 0.5
@@ -27,11 +28,9 @@ class NeuralNetwork:
 
             id = newNeuronLayer.getActuallyId()
 
-        del(self.__layersSize)
-        del(self.__biases)
-
     def creatingWeights(self):
         self.__weights = []
+        self.addingWeights()
 
     # endregion
 
@@ -48,18 +47,14 @@ class NeuralNetwork:
             for neuronFromLayer1 in neurons1:
                 neuronId1 = neuronFromLayer1.getId()
                 neuronId2 = neuronFromLayer2.getId()
-                self.addingWeightBetweenTwoNeuron(neuronId1, neuronId2, self.__w)
-                self.__w += 0.05
+                weight = random.uniform(0, 1)
+                self.addingWeightBetweenTwoNeuron(neuronId1, neuronId2, weight)
 
     def addingWeights(self):
-        self.__w = 0.15
         for i in range(self.__numberOfLayers - 1):
             layer1 = self.getLayerByIndex(i)
             layer2 = self.getLayerByIndex(i + 1)
             self.addingWeightsBetweenTwoLayer(layer1, layer2)
-            self.__w += 0.05
-
-        del(self.__w)
 
     # endregion
 
